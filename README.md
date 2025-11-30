@@ -11,3 +11,4 @@ Key Features
   - Pages: Shop, Contact (email form), About (per-member sections), Media, Checkout, Success/Cancel.
   - Backend: Next.js API routes for checkout session creation, webhook handling, download endpoint, events admin, etc.
   - Persistence: Azure MySQL (orders, order_tokens) for order and token records.
+
