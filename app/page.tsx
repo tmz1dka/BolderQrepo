@@ -1,65 +1,208 @@
+import Link from "next/link";
 import Image from "next/image";
+//import { LogoWave } from "@/components/LogoWave";
+import { products } from "@/data/products";
+
+const featured = products.filter((p) =>
+  ["vivaldi-follia", "kancheli-tango"].includes(p.id),
+);
+// Set your album cover image (place the file in /public and update the path)
+const albumCover = "/BQPaletteEditA.jpg";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="flex flex-col">
+      {/* Section 1: Tickets */}
+      <section className="relative flex min-h-screen items-center justify-center bg-[url('/1K5A4016.jpg')] bg-cover bg-[center_35%] text-white">
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative flex flex-col items-center gap-6 px-6 text-center">
+
+          <Image
+            src="/LogotypeWhite.png"
+            alt="Bålder Quartet"
+            width={900}
+            height={400}
+            className="h-auto w-[360px]"
+            priority
+          />
+          <p className="max-w-2xl text-lg text-white/75">
+            Experience the quartet live. Upcoming dates and tickets await.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/events"
+            className="rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-amber-400"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+            Get Tickets
+          </Link>
+        </div>
+      </section>
+
+      {/* Section 2: YouTube video (no autoplay) */}
+      <section className="flex min-h-screen items-center justify-center bg-[url('/1K5A4016.jpg')] bg-[length:160%] bg-[center_5%] bg-no-repeat px-6 py-12 text-white">
+        <div className="w-full">
+          <div className="relative mx-auto aspect-video max-w-5xl overflow-hidden">
+            <iframe
+              className="absolute inset-0 h-full w-full"
+              src="https://www.youtube.com/embed/puMBpccmGBA" // https://youtu.be/puMBpccmGBA?si=ohFNToV9ZqshfdIo
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Section 3: Album + YouTube channel */}
+      <section
+        className="relative flex min-h-screen items-center justify-center px-6 py-12 text-white"
+        style={{
+          backgroundImage: `url(${albumCover})`,
+          backgroundSize: "160%",
+          backgroundPosition: "center 5%",
+          backgroundRepeat: "no-repeat",
+          backgroundColor: "#0f1016",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative flex w-full flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="space-y-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-white/50">Album</p>
+            <h2 className="text-3xl font-semibold">Latest Album</h2>
+            <p className="max-w-2xl text-white/70">
+              Paste album cover link here. Describe the release and invite listeners to explore.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/album"
+                className="rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-amber-400"
+              >
+                Album Page
+              </Link>
+              <a
+                href="https://www.youtube.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/50 hover:bg-white/5"
+              >
+                YouTube Channel
+              </a>
+            </div>
+          </div>
+          <div className="relative h-72 w-full max-w-xl overflow-hidden border border-dashed border-white/20 bg-white/5">
+            <div className="absolute inset-0 grid place-items-center text-center text-xs uppercase tracking-[0.2em] text-white/50">
+              Paste album cover image link here
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: Streaming links + Shop */}
+      <section
+        className="relative flex min-h-screen items-center justify-center px-6 py-12 text-white"
+        style={{
+          backgroundImage: "url('/BQPaletteEditB.jpg')",
+          backgroundSize: "100%",
+          backgroundPosition: "center 33%",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative flex flex-col items-center gap-4 text-center">
+          <h2 className="text-3xl font-semibold">Listen & Shop</h2>
+          <p className="max-w-2xl text-white/75">
+            Pick your platform or grab the score directly.
+          </p>
+          <div className="mt-2 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href="/streaming"
+              className="rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-amber-400"
+            >
+              Streaming Links
+            </Link>
+            <Link
+              href="/shop"
+              className="rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/50 hover:bg-white/5"
+            >
+              Buy Scores
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: Shop preview */}
+      <section
+        className="relative flex min-h-screen items-center justify-center px-6 py-12 text-white"
+        style={{
+          backgroundImage: "url('/BQPaletteEditC.jpg')",
+          backgroundSize: "100%",
+          backgroundPosition: "center 35%",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative flex w-full flex-col gap-6">
+          <div className="grid flex-1 gap-4 sm:grid-cols-2">
+            {featured.map((item) => (
+              <div
+                key={item.id}
+                className="relative overflow-hidden border border-white/15 bg-white/5 p-4"
+                style={{ minHeight: "45vh" }}
+              >
+                <div className="relative h-[75%] overflow-hidden border border-dashed border-white/15 bg-white/5">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="flex min-h-[20%] flex-col justify-end gap-1">
+                  <h3 className="text-lg font-semibold">{item.name}</h3>
+                  <p className="text-amber-200">€{item.price.toFixed(2)}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-center gap-3">
+            <Link
+              href="/shop"
+              className="rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-amber-400"
+            >
+              Visit Shop
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6: Quartet story */}
+      <section
+        className="relative flex min-h-screen items-center justify-center px-6 py-12 text-white"
+        style={{
+          backgroundImage: "url('/BQPaletteEditC.jpg')",
+          backgroundSize: "160%",
+          backgroundPosition: "center 5%",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative flex w-full flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="space-y-4 lg:max-w-2xl">
+            <p className="text-xs uppercase tracking-[0.3em] text-white/50">About</p>
+            <h2 className="text-3xl font-semibold">The Bålder Quartet</h2>
+            <p className="text-white/70 leading-relaxed">
+              Paste story text here — highlights of performances, style, and vision.
+            </p>
+            <p className="text-white/70 leading-relaxed">
+              Add more detail about collaborations, tours, or signature arrangements to give visitors context.
+            </p>
+          </div>
+          <div className="relative h-80 w-full max-w-xl overflow-hidden border border-dashed border-white/20 bg-white/5">
+            <div className="absolute inset-0 grid place-items-center text-center text-xs uppercase tracking-[0.2em] text-white/50">
+              Paste quartet photo link here
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

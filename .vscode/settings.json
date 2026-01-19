@@ -1,0 +1,26 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Enabled",
+                "ssl": {
+                    "ca": "/Users/Bengalintiikeri/Desktop/DigiCertGlobalRootG2.crt.pem"
+                }
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "balderquartetserver.mysql.database.azure.com",
+            "port": 3306,
+            "sshOptions": {
+                "port": 22
+            },
+            "driver": "MySQL",
+            "name": "balderquartet",
+            "database": "mysql",
+            "username": "balderadmin",
+            "connectionTimeout": 30,
+            "askForPassword": true
+        }
+    ]
+}
