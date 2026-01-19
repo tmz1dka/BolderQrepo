@@ -2,6 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 
+// Audio playback is currently disabled; leave src empty or point to a new file when re-enabling.
+const AUDIO_SRC = "";
+
 type LevelEvent = {
   level: number;
   playing: boolean;
@@ -121,7 +124,7 @@ export function AudioWidget() {
 
   return (
     <>
-      <audio ref={audioRef} src="/Instead of a Tango_mix1.wav" preload="auto" />
+      <audio ref={audioRef} src={AUDIO_SRC} preload="auto" />
       <div className="fixed bottom-4 left-1/2 z-40 flex -translate-x-1/2 items-center gap-3 rounded-2xl border border-white/15 bg-black/70 px-4 py-2 text-white shadow-2xl shadow-black/50 backdrop-blur">
         <button
           type="button"
