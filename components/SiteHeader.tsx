@@ -4,6 +4,7 @@ import Link from "next/link";
 const links = [
   { href: "/", label: "Home" },
   { href: "/shop", label: "Shop" },
+  { href: "/events", label: "Events" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
   { href: "/media", label: "Media" },
@@ -38,6 +39,12 @@ export function SiteHeader() {
             className="rounded-full bg-amber-500 px-4 py-2 text-xs font-semibold text-black transition hover:bg-amber-400"
           >
             Buy Scores
+          </Link>
+          <Link
+            href="/events"
+            className="rounded-full border border-amber-400/60 px-4 py-2 text-xs font-semibold text-amber-200 transition hover:border-amber-300 hover:bg-amber-300/10"
+          >
+            Events
           </Link>
         </nav>
       </div>

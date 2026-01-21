@@ -28,12 +28,20 @@ export default function Home() {
           <p className="max-w-2xl text-lg text-white/75">
             Experience the quartet live. Upcoming dates and tickets await.
           </p>
-          <Link
-            href="/events"
-            className="rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-amber-400"
-          >
-            Get Tickets
-          </Link>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href="/events"
+              className="rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-amber-400"
+            >
+              Get Tickets
+            </Link>
+            <Link
+              href="/shop"
+              className="rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/50 hover:bg-white/5"
+            >
+              Buy Scores
+            </Link>
+          </div>
         </div>
       </section>
 
