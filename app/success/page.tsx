@@ -15,7 +15,7 @@ export default function SuccessPage() {
     <main className="mx-auto max-w-3xl px-4 py-16 lg:px-6">
       <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-white shadow-2xl shadow-black/40 backdrop-blur">
         <p className="text-sm uppercase tracking-[0.3em] text-white/60">Payment</p>
-        <h1 className="mt-2 text-3xl font-semibold">Thank you for your order</h1>
+        <h1 className="mt-2 text-3xl font-semibold">Thank you for your order!</h1>
         <p className="mt-3 text-white/70">
           Your payment was successful. We&apos;ll send your scores to the email you provided.
         </p>
