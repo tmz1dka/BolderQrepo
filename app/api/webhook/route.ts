@@ -117,7 +117,7 @@ export async function POST(request: Request) {
 
   const rawBody = await request.text();
 
-  const stripe = new Stripe(stripeSecret, { apiVersion: "2024-06-20" });
+  const stripe = new Stripe(stripeSecret, { apiVersion: "2025-11-17.clover" });
 
   let event: Stripe.Event;
   try {
