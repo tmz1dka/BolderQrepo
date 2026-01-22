@@ -1,5 +1,9 @@
 import Link from "next/link";
 
+// Skip prerender; this page is simple and can render dynamically.
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+
 export default function CancelPage() {
   return (
     <main className="mx-auto max-w-3xl px-4 py-16 lg:px-6">

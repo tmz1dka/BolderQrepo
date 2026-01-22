@@ -3,6 +3,10 @@
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
+// This page relies on runtime query params; skip prerender.
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+
 export default function SuccessPage() {
   const params = useSearchParams();
   const sessionId = params.get("session_id");
