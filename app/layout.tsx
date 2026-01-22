@@ -3,8 +3,6 @@ import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-// AudioWidget is kept for future use; disabled for now.
-// import { AudioWidget } from "@/components/AudioWidget";
 import { AdPopup } from "@/components/AdPopup";
 
 const geistSans = Geist({
@@ -42,7 +40,6 @@ export default function RootLayout({
           <SiteHeader />
           {children}
           <SiteFooter />
-          {/* <AudioWidget /> */}
           <AdPopup />
         </div>
       </body>

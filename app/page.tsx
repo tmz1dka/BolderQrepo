@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-//import { LogoWave } from "@/components/LogoWave";
 import { products } from "@/data/products";
 
 const featured = products.filter((p) =>
