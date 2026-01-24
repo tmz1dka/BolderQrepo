@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
@@ -7,7 +8,7 @@ import Link from "next/link";
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
-export default function SuccessPage() {
+function SuccessContent() {
   const params = useSearchParams();
   const sessionId = params.get("session_id");
 
@@ -38,5 +39,21 @@ export default function SuccessPage() {
         </div>
       </div>
     </main>
+  );
+}
+
+export default function SuccessPage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="mx-auto max-w-3xl px-4 py-16 lg:px-6">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-white/60 shadow-2xl shadow-black/40 backdrop-blur">
+            Loading your order...
+          </div>
+        </main>
+      }
+    >
+      <SuccessContent />
+    </Suspense>
   );
 }

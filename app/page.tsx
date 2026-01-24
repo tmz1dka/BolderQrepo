@@ -197,10 +197,7 @@ export default function Home() {
             <p className="text-xs uppercase tracking-[0.3em] text-white/50">About</p>
             <h2 className="text-3xl font-semibold">The Bålder Quartet</h2>
             <p className="text-white/70 leading-relaxed">
-              Paste story text here — highlights of performances, style, and vision.
-            </p>
-            <p className="text-white/70 leading-relaxed">
-              Add more detail about collaborations, tours, or signature arrangements to give visitors context.
+              Bålder Quartet (Finnish: Bålder-kvartetti) was formed earlier in 2018 in Helsinki, Finland. The ensemble won the 2018 “Florida Keys” International Chamber Music Competition and made its debut at Carnegie Hall later that same year. In April 2019, they were invited to perform at the prestigious “Mozarthaus” in Vienna, Austria. The Bålder Quartet is a part of the Kuhmo Chamber Music's String Quartet Academy, working under the mentorship of Vladimir Mendelssohn as well as renowned quartets such as the Quatuor Danel, Enescu Quartet, and META4. In 2023, they became a part of Holland’s String Quartet Academy, supported and guided under the patronage of its artistic leader Marc Danel and the academy's guest teachers. The ensemble's activities are generously supported by the Finnish Culture Foundation, and in 2022 they have undertaken two international tours.
             </p>
           </div>
           <div className="relative h-80 w-full max-w-xl overflow-hidden border border-dashed border-white/20 bg-white/5">
