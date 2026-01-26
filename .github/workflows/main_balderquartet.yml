@@ -23,41 +23,46 @@ jobs:
         with:
           node-version: '24.x'
 
+      
+
       - name: Install & build (Next standalone)
         run: |
+          set -euxo pipefail
+      
           npm ci
           npm run build
       
-          # Detect Next build output directory
-          if [ -d ".next" ]; then
-            OUT=".next"
-          elif [ -d "build" ]; then
-            OUT="build"
-          else
-            echo "ERROR: No .next or build directory after build"
-            ls -la
-            exit 1
-          fi
+          # Detect output dir
+          if [ -d ".next" ]; then OUT=".next"; elif [ -d "build" ]; then OUT="build"; else exit 1; fi
       
-          echo "Using build output dir: $OUT"
-          ls -la $OUT
+          echo "OUT=$OUT"
+          ls -la "$OUT"
+          ls -la "$OUT/standalone" || true
+          ls -la "$OUT/static" || true
+      
+          # Require standalone + static
+          test -d "$OUT/standalone"
+          test -d "$OUT/static"
       
           rm -rf deploy
           mkdir -p deploy/.next
       
-          # Standalone output
-          cp -r $OUT/standalone/* deploy/
+          # Copy standalone server bundle
+          cp -r "$OUT/standalone/"* deploy/
       
-          # Static assets required by standalone server
-          cp -r $OUT/static deploy/.next/static
+          # Copy static assets to deploy/.next/static
+          cp -r "$OUT/static" deploy/.next/
       
-          # Public assets
+          # Copy public assets
           cp -r public deploy/public
       
-          # Verify
+          echo "DEPLOY TREE:"
           ls -la deploy
           ls -la deploy/.next
-          test -f deploy/.next/BUILD_ID || echo "Note: BUILD_ID may be embedded in standalone depending on version"
+          ls -la deploy/.next/static | head
+
+
+
 
 
       - name: Upload artifact for deployment job
@@ -95,13 +100,9 @@ jobs:
           slot-name: 'Production'
           package: deploy
 
-      - name: Verify deploy output
-        run: |
-          ls -la deploy
-          ls -la deploy/.next
-          test -f deploy/.next/BUILD_ID && echo "BUILD_ID exists"
-
           
+          
+
 
 
 
