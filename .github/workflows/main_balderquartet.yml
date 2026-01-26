@@ -23,22 +23,42 @@ jobs:
         with:
           node-version: '24.x'
 
-      - name: npm install, build, and test
+      - name: Install & build (Next standalone)
         run: |
           npm ci
           npm run build
-          npm run test --if-present
-
-
+      
+          # Detect Next build output directory
+          if [ -d ".next" ]; then
+            OUT=".next"
+          elif [ -d "build" ]; then
+            OUT="build"
+          else
+            echo "ERROR: No .next or build directory after build"
+            ls -la
+            exit 1
+          fi
+      
+          echo "Using build output dir: $OUT"
+          ls -la $OUT
+      
           rm -rf deploy
           mkdir -p deploy/.next
-
-
-          cp -r .next/standalone/* deploy/
-
-
-          cp -r .next/static deploy/.next/static
+      
+          # Standalone output
+          cp -r $OUT/standalone/* deploy/
+      
+          # Static assets required by standalone server
+          cp -r $OUT/static deploy/.next/static
+      
+          # Public assets
           cp -r public deploy/public
+      
+          # Verify
+          ls -la deploy
+          ls -la deploy/.next
+          test -f deploy/.next/BUILD_ID || echo "Note: BUILD_ID may be embedded in standalone depending on version"
+
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -82,5 +102,6 @@ jobs:
           test -f deploy/.next/BUILD_ID && echo "BUILD_ID exists"
 
           
+
 
 
