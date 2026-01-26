@@ -76,7 +76,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: deploy
+          path: deploy.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -90,7 +90,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: node-app
-          path: deploy
+          path: .
       
       - name: Login to Azure
         uses: azure/login@v2
@@ -106,7 +106,6 @@ jobs:
           app-name: 'BalderQuartet'
           slot-name: 'Production'
           package: deploy.zip
-          enable-oryx-build: false
           startup-command: 'node server.js'
 
           
