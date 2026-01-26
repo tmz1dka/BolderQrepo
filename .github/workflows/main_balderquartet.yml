@@ -49,13 +49,17 @@ jobs:
       
           # Copy standalone server bundle (include dotfiles like .next)
           cp -a "$OUT/standalone/." deploy/
-      
+
           # Copy static assets to deploy/.next/static
           cp -r "$OUT/static" deploy/.next/
-      
+
           # Copy public assets
           cp -r public deploy/public
-      
+
+          # Sanity check required build outputs
+          test -f deploy/.next/BUILD_ID
+          test -f deploy/server.js
+
           echo "DEPLOY TREE:"
           ls -la deploy
           ls -la deploy/.next
