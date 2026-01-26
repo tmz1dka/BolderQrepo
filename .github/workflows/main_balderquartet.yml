@@ -60,6 +60,9 @@ jobs:
           test -f deploy/.next/BUILD_ID
           test -f deploy/server.js
 
+          # Zip the deploy folder (preserves dotfiles) for OneDeploy
+          (cd deploy && zip -r ../deploy.zip .)
+
           echo "DEPLOY TREE:"
           ls -la deploy
           ls -la deploy/.next
@@ -102,7 +105,7 @@ jobs:
         with:
           app-name: 'BalderQuartet'
           slot-name: 'Production'
-          package: deploy
+          package: deploy.zip
           enable-oryx-build: false
           startup-command: 'node server.js'
 
