@@ -47,8 +47,8 @@ jobs:
           rm -rf deploy
           mkdir -p deploy/.next
       
-          # Copy standalone server bundle
-          cp -r "$OUT/standalone/"* deploy/
+          # Copy standalone server bundle (include dotfiles like .next)
+          cp -a "$OUT/standalone/." deploy/
       
           # Copy static assets to deploy/.next/static
           cp -r "$OUT/static" deploy/.next/
