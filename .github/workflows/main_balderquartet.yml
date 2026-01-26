@@ -99,6 +99,8 @@ jobs:
           app-name: 'BalderQuartet'
           slot-name: 'Production'
           package: deploy
+          enable-oryx-build: false
+          startup-command: 'node server.js'
 
           
           
