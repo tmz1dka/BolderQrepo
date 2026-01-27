@@ -17,7 +17,7 @@ export default function Home() {
         <div className="relative flex flex-col items-center gap-6 px-6 text-center">
 
           <Image
-            src="/LogotypeWhite.png"
+            src="/Dissonant-White.png"
             alt="Bålder Quartet"
             width={900}
             height={400}
