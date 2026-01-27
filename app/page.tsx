@@ -45,7 +45,7 @@ export default function Home() {
       </section>
 
       {/* Section 2: YouTube video (no autoplay) */}
-      <section className="flex min-h-screen items-center justify-center bg-[url('/1K5A4016.jpg')] bg-[length:160%] bg-[center_5%] bg-no-repeat px-6 py-12 text-white">
+      <section className="flex min-h-screen items-center justify-center bg-[url('/backgroundempty.png')] bg-[length:160%] bg-[center_5%] bg-no-repeat px-6 py-12 text-white">
         <div className="w-full">
           <div className="relative mx-auto aspect-video max-w-5xl overflow-hidden">
             <iframe
