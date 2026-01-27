@@ -8,6 +8,13 @@ export type Product = {
 
 export const products: Product[] = [
   {
+    id: "stripe-test-050",
+    name: "Test Item (Stripe Live Check)",
+    price: 0.5,
+    image: "/BQPaletteEditB.jpg",
+    description: "Disposable low-price item to verify live payments end-to-end.",
+  },
+  {
     id: "vivaldi-follia",
     name: "Antonio Vivaldi - La Follia",
     price: 19.9,
