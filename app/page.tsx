@@ -55,7 +55,7 @@ export default function Home() {
 
       {/* Section 3: The Bålder Show */}
       <section
-        className="relative flex min-h-[80vh] md:min-h-screen items-center justify-center px-4 py-10 sm:px-6 md:py-16 text-white"
+        className="relative flex min-h-[100vh] md:min-h-[125vh] items-center justify-center px-4 py-14 sm:px-6 md:py-20 text-white"
         style={{
           backgroundImage: `url(${albumCover})`,
           backgroundSize: "cover",
