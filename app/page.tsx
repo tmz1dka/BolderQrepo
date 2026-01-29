@@ -65,7 +65,7 @@ export default function Home() {
         }}
       >
         <div className="absolute inset-0 bg-black/60" />
-        <div className="relative flex w-full flex-col items-center gap-6 text-center lg:items-start lg:text-left">
+        <div className="relative flex flex-col items-center gap-4 text-center">
           <p className="text-xs uppercase tracking-[0.3em] text-white/50">The Bålder Show</p>
           <h2 className="text-3xl md:text-4xl font-semibold leading-tight">
             Explosive. Immersive. Unforgettable.
@@ -122,21 +122,21 @@ export default function Home() {
       <section
         className="relative flex min-h-screen items-center justify-center px-6 py-12 text-white"
         style={{
-          backgroundImage: "url('/latestalbum.jpg')",
-          backgroundSize: "160%",
+          backgroundImage: "url('/section5.jpg')",
+          backgroundSize: "100%",
           backgroundPosition: "center 5%",
           backgroundRepeat: "no-repeat",
         }}
       >
         <div className="absolute inset-0 bg-black/60" />
-        <div className="relative flex w-full flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+        <div className="relative flex flex-col items-center gap-4 text-center">
           <div className="space-y-4">
             <p className="text-xs uppercase tracking-[0.3em] text-white/50">Album</p>
             <h2 className="text-3xl font-semibold">Latest Album</h2>
             <p className="max-w-2xl text-white/70">
               Paste album cover link here. Describe the release and invite listeners to explore.
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="mt-2 flex flex-wrap items-center justify-center gap-3">
               <Link
                 href="/album"
                 className="rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-amber-400"
@@ -153,11 +153,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="relative h-72 w-full max-w-xl overflow-hidden border border-dashed border-white/20 bg-white/5">
-            <div className="absolute inset-0 grid place-items-center text-center text-xs uppercase tracking-[0.2em] text-white/50">
-              Paste album cover image link here
-            </div>
-          </div>
+          
         </div>
       </section>
 
