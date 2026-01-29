@@ -91,7 +91,7 @@ export function SiteFooter() {
             ))}
           </div>
           <p className="text-xs text-white/50 lg:text-right">
-            © {new Date().getFullYear()} Quartet. All rights reserved.
+            © {new Date().getFullYear()} Bålder Quartet. All rights reserved.
           </p>
         </div>
       </div>
