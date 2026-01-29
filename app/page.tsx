@@ -8,9 +8,11 @@ export default function Home() {
   return (
     <main className="flex flex-col">
       {/* Section 1: Tickets */}
-      <section className="relative flex min-h-screen items-center justify-center bg-[url('/1K5A4016.jpg')] bg-cover bg-[center_35%] text-white">
+      <section
+        className="relative flex min-h-[80vh] md:min-h-screen items-center justify-center bg-[url('/home-page-section1.jpg')] bg-cover bg-center bg-no-repeat text-white px-4 py-10 sm:px-6 md:py-16"
+      >
         <div className="absolute inset-0 bg-black/60" />
-        <div className="relative flex flex-col items-center gap-6 px-6 text-center">
+        <div className="relative flex flex-col items-center gap-6 px-4 text-center sm:px-6">
 
           <Image
             src="/Dissonant-White.png"
@@ -20,13 +22,13 @@ export default function Home() {
             className="h-auto w-[360px]"
             priority
           />
-          <p className="max-w-2xl text-lg text-white/75">
+          <p className="max-w-2xl text-base sm:text-lg text-white/75">
             Concert. Reimagined.It’s Showtime!.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-3 w-full sm:w-auto">
             <Link
-              href="/events"
-              className="rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-amber-400"
+              href="https://www.lippu.fi/artist/balder-quartet/"
+              className="w-full sm:w-auto rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-amber-400 text-center"
             >
               Get Tickets
             </Link>
@@ -35,8 +37,9 @@ export default function Home() {
       </section>
 
       {/* Section 2: YouTube video (no autoplay) */}
-      <section className="flex min-h-screen items-center justify-center bg-[url('/backgroundempty.png')] bg-[length:160%] bg-[center_5%] bg-no-repeat px-6 py-12 text-white">
-        <div className="w-full">
+      <section className="relative flex min-h-[80vh] md:min-h-screen items-center justify-center bg-[url('/backgroundempty.png')] bg-cover bg-center bg-no-repeat px-4 py-10 sm:px-6 md:py-16 text-white">
+        <div className="absolute inset-0 bg-black/10" />
+        <div className="relative w-full">
           <div className="relative mx-auto aspect-video max-w-5xl overflow-hidden">
             <iframe
               className="absolute inset-0 h-full w-full"
@@ -52,7 +55,7 @@ export default function Home() {
 
       {/* Section 3: The Bålder Show */}
       <section
-        className="relative flex min-h-screen items-center justify-center px-6 py-12 text-white"
+        className="relative flex min-h-[80vh] md:min-h-screen items-center justify-center px-4 py-10 sm:px-6 md:py-16 text-white"
         style={{
           backgroundImage: `url(${albumCover})`,
           backgroundSize: "cover",
@@ -64,17 +67,17 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative flex w-full flex-col items-center gap-6 text-center lg:items-start lg:text-left">
           <p className="text-xs uppercase tracking-[0.3em] text-white/50">The Bålder Show</p>
-          <h2 className="text-4xl font-semibold leading-tight">
+          <h2 className="text-3xl md:text-4xl font-semibold leading-tight">
             Explosive. Immersive. Unforgettable.
           </h2>
-          <p className="max-w-2xl text-white/75">
+          <p className="max-w-2xl text-white/75 text-base md:text-lg">
             Step into our world of fierce lyricism, Nordic light, and tango fire. Every concert is
             crafted to pull you in from the first note.
           </p>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3 w-full sm:w-auto">
             <Link
-              href="/events"
-              className="rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-amber-400"
+              href="https://www.lippu.fi/artist/balder-quartet/"
+              className="w-full sm:w-auto rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-amber-400 text-center"
             >
               Get Tickets
             </Link>
@@ -119,7 +122,7 @@ export default function Home() {
       <section
         className="relative flex min-h-screen items-center justify-center px-6 py-12 text-white"
         style={{
-          backgroundImage: "url('/BQPaletteEditC.jpg')",
+          backgroundImage: "url('/latestalbum.jpg')",
           backgroundSize: "160%",
           backgroundPosition: "center 5%",
           backgroundRepeat: "no-repeat",
@@ -164,7 +167,7 @@ export default function Home() {
         style={{
           backgroundImage: "url('/our-story.jpg')",
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "center 20%",
           backgroundRepeat: "repeat-y",
         }}
       >

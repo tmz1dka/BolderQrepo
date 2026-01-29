@@ -13,18 +13,18 @@ const links = [
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-30 border-b border-white/10 bg-black/50 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 lg:px-6">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3 lg:px-6">
         <Link href="/" className="flex items-center">
           <Image
             src="/LogotypeWhite.png"
             alt="Bålder Quartet"
             width={150}
             height={40}
-            className="h-8 w-auto"
+            className="h-7 w-auto sm:h-8"
             priority
           />
         </Link>
-        <nav className="flex items-center gap-4 text-sm font-medium text-white/80">
+        <nav className="flex flex-wrap items-center gap-2 sm:gap-4 text-sm font-medium text-white/80">
           {links.map((link) => (
             <Link
               key={link.href}
