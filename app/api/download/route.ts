@@ -22,14 +22,15 @@ const pool = mysql.createPool({
 });
 
 const fileMap: Record<string, string> = {
-  "Antonio Vivaldi - La Follia": "Antonio Vivaldi - La Follia.pdf",
-  "Giya Kancheli - Instead of a Tango": "Giya Kancheli - Instead of a Tango.pdf",
-  "Astor Piazzolla - Verano Porteño": "Astor Piazzolla - Verano Porteño.pdf",
-  "Astor Piazzolla - Otoño Porteño": "Astor Piazzolla - Otoño Porteño.pdf",
-  "Astor Piazzolla - Invierno Porteño": "Astor Piazzolla - Invierno Porteño.pdf",
-  "Astor Piazzolla - Primavera Porteña": "Astor Piazzolla - Primavera Porteña.pdf",
+  "Antonio Vivaldi - La Follia": "la-follia-full-score-and-parts.pdf",
+  "Giya Kancheli - Instead of a Tango": "instead-of-a-tango-string-quartet-score.pdf",
+  "Astor Piazzolla - Verano Porteño": "verano-score-and-parts.pdf",
+  "Astor Piazzolla - Otoño Porteño": "otono-score-and-parts.pdf",
+  "Astor Piazzolla - Invierno Porteño": "invierno-score-and-parts.pdf",
+  "Astor Piazzolla - Primavera Porteña": "primavera-score-and-parts.pdf",
   "Astor Piazzolla - Las Cuatro Estaciones Porteñas":
-    "Astor Piazzolla - Las Cuatro Estaciones Porteñas.pdf",
+    "astor-piazzolla-las-cuatro-estaciones-portenas-score-and-parts.pdf",
+  "Test Item (Stripe Live Check)": "test.pdf",
 };
 
 export const dynamic = "force-dynamic";
