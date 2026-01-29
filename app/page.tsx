@@ -55,7 +55,7 @@ export default function Home() {
 
       {/* Section 3: The Bålder Show */}
       <section
-        className="relative flex min-h-[100vh] md:min-h-[125vh] items-center justify-center px-4 py-14 sm:px-6 md:py-20 text-white"
+        className="relative flex min-h-[120vh] md:min-h-[125vh] items-center justify-center px-4 py-14 sm:px-6 md:py-20 text-white"
         style={{
           backgroundImage: `url(${albumCover})`,
           backgroundSize: "cover",
@@ -87,10 +87,10 @@ export default function Home() {
 
       {/* Section 4: Streaming links + Shop */}
       <section
-        className="relative flex min-h-screen items-center justify-center px-6 py-12 text-white"
+        className="relative flex min-h-[120vh] md:min-h-[125vh] items-center justify-center px-6 py-12 text-white"
         style={{
           backgroundImage: "url('/BQPaletteEditB.jpg')",
-          backgroundSize: "100%",
+          backgroundSize: "cover",
           backgroundPosition: "center 33%",
           backgroundRepeat: "no-repeat",
         }}
@@ -120,10 +120,10 @@ export default function Home() {
 
       {/* Section 5: Album highlight */}
       <section
-        className="relative flex min-h-screen items-center justify-center px-6 py-12 text-white"
+        className="relative flex min-h-[120vh] md:min-h-[125vh] items-center justify-center px-6 py-12 text-white"
         style={{
           backgroundImage: "url('/section5.jpg')",
-          backgroundSize: "100%",
+          backgroundSize: "cover",
           backgroundPosition: "center 5%",
           backgroundRepeat: "no-repeat",
         }}

@@ -13,7 +13,7 @@ export default function EventsPage() {
           className="absolute inset-0"
           style={{
             backgroundImage: "url('/theBQShow-withinfo.jpg')",
-            backgroundSize: "contain",
+            backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
           }}
