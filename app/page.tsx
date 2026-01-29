@@ -1,12 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { products } from "@/data/products";
 
-const featured = products.filter((p) =>
-  ["vivaldi-follia", "kancheli-tango"].includes(p.id),
-);
 // Set your album cover image (place the file in /public and update the path)
-const albumCover = "/BQPaletteEditA.jpg";
+const albumCover = "/Website.jpg";
 
 export default function Home() {
   return (
@@ -25,7 +21,7 @@ export default function Home() {
             priority
           />
           <p className="max-w-2xl text-lg text-white/75">
-            Experience the quartet live. Upcoming dates and tickets await.
+            Concert. Reimagined.It’s Showtime!.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <Link
@@ -33,12 +29,6 @@ export default function Home() {
               className="rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-amber-400"
             >
               Get Tickets
-            </Link>
-            <Link
-              href="/shop"
-              className="rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/50 hover:bg-white/5"
-            >
-              Buy Scores
             </Link>
           </div>
         </div>
@@ -60,46 +50,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 3: Album + YouTube channel */}
+      {/* Section 3: The Bålder Show */}
       <section
         className="relative flex min-h-screen items-center justify-center px-6 py-12 text-white"
         style={{
           backgroundImage: `url(${albumCover})`,
-          backgroundSize: "160%",
-          backgroundPosition: "center 5%",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundColor: "#0f1016",
         }}
       >
         <div className="absolute inset-0 bg-black/60" />
-        <div className="relative flex w-full flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-          <div className="space-y-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-white/50">Album</p>
-            <h2 className="text-3xl font-semibold">Latest Album</h2>
-            <p className="max-w-2xl text-white/70">
-              Paste album cover link here. Describe the release and invite listeners to explore.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link
-                href="/album"
-                className="rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-amber-400"
-              >
-                Album Page
-              </Link>
-              <a
-                href="https://www.youtube.com/"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/50 hover:bg-white/5"
-              >
-                YouTube Channel
-              </a>
-            </div>
-          </div>
-          <div className="relative h-72 w-full max-w-xl overflow-hidden border border-dashed border-white/20 bg-white/5">
-            <div className="absolute inset-0 grid place-items-center text-center text-xs uppercase tracking-[0.2em] text-white/50">
-              Paste album cover image link here
-            </div>
+        <div className="relative flex w-full flex-col items-center gap-6 text-center lg:items-start lg:text-left">
+          <p className="text-xs uppercase tracking-[0.3em] text-white/50">The Bålder Show</p>
+          <h2 className="text-4xl font-semibold leading-tight">
+            Explosive. Immersive. Unforgettable.
+          </h2>
+          <p className="max-w-2xl text-white/75">
+            Step into our world of fierce lyricism, Nordic light, and tango fire. Every concert is
+            crafted to pull you in from the first note.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/events"
+              className="rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-amber-400"
+            >
+              Get Tickets
+            </Link>
           </div>
         </div>
       </section>
@@ -137,51 +115,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 5: Shop preview */}
-      <section
-        className="relative flex min-h-screen items-center justify-center px-6 py-12 text-white"
-        style={{
-          backgroundImage: "url('/BQPaletteEditC.jpg')",
-          backgroundSize: "100%",
-          backgroundPosition: "center 35%",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="relative flex w-full flex-col gap-6">
-          <div className="grid flex-1 gap-4 sm:grid-cols-2">
-            {featured.map((item) => (
-              <div
-                key={item.id}
-                className="relative overflow-hidden border border-white/15 bg-white/5 p-4"
-                style={{ minHeight: "45vh" }}
-              >
-                <div className="relative h-[75%] overflow-hidden border border-dashed border-white/15 bg-white/5">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="flex min-h-[20%] flex-col justify-end gap-1">
-                  <h3 className="text-lg font-semibold">{item.name}</h3>
-                  <p className="text-amber-200">€{item.price.toFixed(2)}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="flex items-center justify-center gap-3">
-            <Link
-              href="/shop"
-              className="rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-amber-400"
-            >
-              Visit Shop
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 6: Quartet story */}
+      {/* Section 5: Album highlight */}
       <section
         className="relative flex min-h-screen items-center justify-center px-6 py-12 text-white"
         style={{
@@ -193,16 +127,97 @@ export default function Home() {
       >
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative flex w-full flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-          <div className="space-y-4 lg:max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.3em] text-white/50">About</p>
-            <h2 className="text-3xl font-semibold">The Bålder Quartet</h2>
-            <p className="text-white/70 leading-relaxed">
-              Bålder Quartet (Finnish: Bålder-kvartetti) was formed earlier in 2018 in Helsinki, Finland. The ensemble won the 2018 “Florida Keys” International Chamber Music Competition and made its debut at Carnegie Hall later that same year. In April 2019, they were invited to perform at the prestigious “Mozarthaus” in Vienna, Austria. The Bålder Quartet is a part of the Kuhmo Chamber Music's String Quartet Academy, working under the mentorship of Vladimir Mendelssohn as well as renowned quartets such as the Quatuor Danel, Enescu Quartet, and META4. In 2023, they became a part of Holland’s String Quartet Academy, supported and guided under the patronage of its artistic leader Marc Danel and the academy's guest teachers. The ensemble's activities are generously supported by the Finnish Culture Foundation, and in 2022 they have undertaken two international tours.
+          <div className="space-y-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-white/50">Album</p>
+            <h2 className="text-3xl font-semibold">Latest Album</h2>
+            <p className="max-w-2xl text-white/70">
+              Paste album cover link here. Describe the release and invite listeners to explore.
             </p>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/album"
+                className="rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-amber-400"
+              >
+                Album Page
+              </Link>
+              <a
+                href="https://www.youtube.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/50 hover:bg-white/5"
+              >
+                YouTube Channel
+              </a>
+            </div>
           </div>
-          <div className="relative h-80 w-full max-w-xl overflow-hidden border border-dashed border-white/20 bg-white/5">
+          <div className="relative h-72 w-full max-w-xl overflow-hidden border border-dashed border-white/20 bg-white/5">
             <div className="absolute inset-0 grid place-items-center text-center text-xs uppercase tracking-[0.2em] text-white/50">
-              Paste quartet photo link here
+              Paste album cover image link here
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6: Our Story */}
+      <section
+        className="relative flex min-h-screen items-center justify-center px-6 py-12 text-white"
+        style={{
+          backgroundImage: "url('/our-story.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "repeat-y",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/65" />
+        <div className="relative flex w-full flex-col items-center gap-8 text-center lg:items-center lg:text-center">
+          <div className="space-y-4 lg:max-w-3xl">
+            <p className="text-xs uppercase tracking-[0.3em] text-white/50">Our Story</p>
+            <h2 className="text-3xl font-semibold">The Bålder Quartet</h2>
+            <div className="space-y-4 text-white/75 leading-relaxed">
+              <p>
+                As a string quartet, we often find ourselves immersed in the classical music world. It
+                is a strange, wondrous world, steeped in interesting traditions that are full of depth
+                and meaning. Our daily lives are shaped by rehearsals, listening to each other, arguing
+                about phrasing, and trying to make some sense of music that has outlived us all. Over
+                the years, we’ve studied, travelled, performed, and functioned as four individuals all
+                travelling the same path. If you’re looking for the formal version of this story, that
+                information exists elsewhere, neatly organised and responsibly factual.
+              </p>
+              <p>
+                Here's the simple version of our story instead. Bålder Quartet started when a young
+                Emil Hartikainen approached Vadim Grumeza during a rehearsal break in Helsinki,
+                expressing the desire to form a quartet and to perform music that would connect
+                people. Impressed by the size of Emil's afro and convinced by the båldness of his
+                convictions, Vadim agreed.
+              </p>
+              <p>
+                Through hard work and perseverance, we slowly found our members. Our ever-reliable
+                cellist Tommi Wesslund came aboard in 2017, and in 2018, talented Malaysian violinist
+                Andrew Ng joined as well. Together, we hung out at festivals and music camps, drinking
+                wine, playing pranks on each other, and sneaking out late at night to do skinny
+                dipping. Through patient guidance from Enescu Quartet violist Vladimir Mendelssohn and
+                Marc Danel from Quatuor Danel, we steadily learned how to play together. With our
+                coaches, we did some real serious string quartet work, like fixing intonation and
+                stuff!
+              </p>
+              <p>
+                Time passes quickly, and how on earth exactly we are not so sure, but here we are now.
+                We rehearse, take our work seriously, and laugh often — sometimes at the music, and
+                sometimes at ourselves. Despite all the obstacles: Emil is always in London; Andrew is
+                constantly swept up in work, what keeps us going is trust. The kind that allows for
+                honesty, risk-taking, and the occasional disagreement that only brings us closer.
+              </p>
+              <p>
+                It all started as a dream, to connect people through the power of music. Music has the
+                ability to open doors to many powerful emotions, and together we aim to bring these
+                emotions to the stage. Whether we follow tradition closely or bend it, our goal remains
+                the same: to create concerts that make people feel alive, and be in the present.
+              </p>
+              <p>
+                Now we are living our dream. To be honest, we are still learning and still growing.
+                Listening to each other, trusting the process, and for now, that feels like exactly
+                enough.
+              </p>
             </div>
           </div>
         </div>
